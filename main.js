@@ -5,7 +5,8 @@ function computerPlay(){
 }
 
 function round(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase;
+    playerSelection = toSentenceCase(playerSelection);
+    
 }
 
 function toSentenceCase(str) {
