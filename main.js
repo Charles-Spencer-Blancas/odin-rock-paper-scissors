@@ -10,12 +10,22 @@ function round(playerSelection, computerSelection) {
     let playerIndex = choices.indexOf(playerSelection);
     let computerIndex = choices.indexOf(computerSelection);
 
-    if (playerIndex == choices.length && computerIndex == 0) {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+    if (playerIndex == -1) {
+        console.log("Unknown entry.");
     }
-    else if (computerIndex == choices.length && playerIndex == 0) {
-        console.log(`You win! ${playerSelection} beats ${computerSelection}`
+    else if (playerIndex == choices.length-1 && computerIndex == 0) {
+        return lose(playerSelection, computerSelection);
     }
+    else if (computerIndex == choices.length-1 && playerIndex == 0) {
+        return win(playerSelection, computerSelection);
+    }
+    else if (playerIndex > computerIndex) {
+        return win(playerSelection, computerSelection);
+    }
+    else if (playerIndex < computerIndex) {
+        return lose(playerSelection, computerSelection);
+    }
+    else return `${playerSelection} and ${computerSelection} draws.`
 }
 
 function toSentenceCase(str) {
@@ -23,9 +33,9 @@ function toSentenceCase(str) {
 }
 
 function lose(playerSelection, computerSelection) {
-    console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+    return `You lose! ${computerSelection} beats ${playerSelection}`
 }
 
 function win(playerSelection, computerSelection) {
-    console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+    return `You win! ${playerSelection} beats ${computerSelection}`
 }
