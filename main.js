@@ -26,4 +26,6 @@ function lose(playerSelection, computerSelection) {
     console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
 }
 
-function win(console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+function win(playerSelection, computerSelection) {
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+}
