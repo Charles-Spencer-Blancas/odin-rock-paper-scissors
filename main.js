@@ -1,5 +1,30 @@
 let choices = ["Rock", "Paper", "Scissors"];
 
+game();
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+        console.log(`Player: ${playerScore} Computer: ${computerScore}`)
+        let result = round(prompt("Rock, Paper, or Scissors?"), computerPlay());
+        console.log(result);
+        if (result.includes("lose")) {
+            computerScore++
+        }
+        else if (result.includes("win")) {
+            playerScore++
+        }
+    }
+    if (playerScore > computerScore) {
+        console.log(`You won ${playerScore} to ${computerScore}`);
+    }
+    else if (playerScore < computerScore) {
+        console.log(`You lost ${computerScore} to ${playerScore}`);
+    }
+    else console.log(`Draw. You both scored ${playerScore}`);
+}
+
 function computerPlay(){
     let picked = Math.floor(choices.length * Math.random());
     return choices[picked];
