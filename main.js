@@ -8,6 +8,9 @@ selection.forEach((button) => {
     });
 });
 
+let playerScore = 0;
+let computerScore = 0;
+
 function computerPlay() {
     return Math.floor(choices.length * Math.random());
 }
@@ -34,9 +37,11 @@ function round(playerIndex, computerIndex) {
 }
 
 function lose(playerSelection, computerSelection) {
+    computerScore++;
     return `You lose! ${computerSelection} beats ${playerSelection}`;
 }
 
 function win(playerSelection, computerSelection) {
+    playerScore++;
     return `You win! ${playerSelection} beats ${computerSelection}`;
 }
