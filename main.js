@@ -1,11 +1,19 @@
 let choices = ['Rock', 'Paper', 'Scissors'];
 
-game();
+selection = document.querySelectorAll('.selection');
+
+selection.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(choices[parseInt(button.id) - 1]);
+    });
+});
+
+//game();
 
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 99999999; i++) {
         console.log(`Player: ${playerScore} Computer: ${computerScore}`);
         let result = round(prompt('Rock, Paper, or Scissors?'), computerPlay());
         console.log(result);
@@ -23,18 +31,11 @@ function game() {
 }
 
 function computerPlay() {
-    let picked = Math.floor(choices.length * Math.random());
-    return choices[picked];
+    return Math.floor(choices.length * Math.random());
 }
 
 function round(playerSelection, computerSelection) {
-    playerSelection = toSentenceCase(playerSelection);
-    let playerIndex = choices.indexOf(playerSelection);
-    let computerIndex = choices.indexOf(computerSelection);
-
-    if (playerIndex == -1) {
-        console.log('Unknown entry.');
-    } else if (playerIndex == choices.length - 1 && computerIndex == 0) {
+    if (playerIndex == choices.length - 1 && computerIndex == 0) {
         return lose(playerSelection, computerSelection);
     } else if (computerIndex == choices.length - 1 && playerIndex == 0) {
         return win(playerSelection, computerSelection);
@@ -43,10 +44,6 @@ function round(playerSelection, computerSelection) {
     } else if (playerIndex < computerIndex) {
         return lose(playerSelection, computerSelection);
     } else return `${playerSelection} and ${computerSelection} draws.`;
-}
-
-function toSentenceCase(str) {
-    return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
 }
 
 function lose(playerSelection, computerSelection) {
