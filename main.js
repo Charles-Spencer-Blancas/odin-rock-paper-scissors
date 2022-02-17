@@ -4,7 +4,7 @@ selection = document.querySelectorAll('.selection');
 
 selection.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(round(parseInt(button.id) - 1, computerPlay()));
+        round(parseInt(button.id) - 1, computerPlay());
     });
 });
 
@@ -30,7 +30,7 @@ function round(playerIndex, computerIndex) {
 
     let displayText = document.createElement('div');
     displayText.textContent = output;
-    document.querySelector('.container').append(text);
+    document.querySelector('.container').append(displayText);
 }
 
 function lose(playerSelection, computerSelection) {
