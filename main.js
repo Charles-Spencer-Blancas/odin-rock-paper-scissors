@@ -4,7 +4,7 @@ selection = document.querySelectorAll('.selection');
 
 selection.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(choices[parseInt(button.id) - 1]);
+        round(choices[parseInt(button.id) - 1], computerPlay());
     });
 });
 
@@ -34,7 +34,10 @@ function computerPlay() {
     return Math.floor(choices.length * Math.random());
 }
 
-function round(playerSelection, computerSelection) {
+function round(playerIndex, computerIndex) {
+    playerSelection = choices[playerIndex];
+    computerSelection = choices[computerIndex];
+
     if (playerIndex == choices.length - 1 && computerIndex == 0) {
         return lose(playerSelection, computerSelection);
     } else if (computerIndex == choices.length - 1 && playerIndex == 0) {
