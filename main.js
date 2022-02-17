@@ -38,10 +38,12 @@ function round(playerIndex, computerIndex) {
 
 function lose(playerSelection, computerSelection) {
     computerScore++;
+    document.querySelector('#computerScore').textContent = computerScore;
     return `You lose! ${computerSelection} beats ${playerSelection}`;
 }
 
 function win(playerSelection, computerSelection) {
     playerScore++;
+    document.querySelector('#playerScore').textContent = playerScore;
     return `You win! ${playerSelection} beats ${computerSelection}`;
 }
