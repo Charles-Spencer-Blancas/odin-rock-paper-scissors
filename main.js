@@ -4,7 +4,7 @@ selection = document.querySelectorAll('.selection');
 
 selection.forEach((button) => {
     button.addEventListener('click', () => {
-        round(choices[parseInt(button.id) - 1], computerPlay());
+        console.log(round(parseInt(button.id) - 1, computerPlay()));
     });
 });
 
@@ -35,6 +35,7 @@ function computerPlay() {
 }
 
 function round(playerIndex, computerIndex) {
+    console.log(playerIndex);
     playerSelection = choices[playerIndex];
     computerSelection = choices[computerIndex];
 
