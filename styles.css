@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #415a77;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.selection {
+    font-size: 200px;
+}
+
+.scoreContainer {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.specificScore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreContainer .score {
+    font-size: 100px;
+}
+
+.scoreContainer .div {
+    font-size: 50px;
+}
+
+.reset {
+    font-size: 50px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+}
+
+button {
+    background-color: #415a77;
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover:enabled {
+    background-color: #2d3f62;
+}
+
+button:active:enabled {
+    background-color: #18324e;
+}
+
+body * {
+    color: #f5f6f4;
+}

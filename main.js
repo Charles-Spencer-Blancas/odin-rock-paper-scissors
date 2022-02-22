@@ -40,17 +40,17 @@ function round(playerIndex, computerIndex) {
     if (playerScore >= 5) {
         let winText = document.createElement('h1');
         winText.textContent = 'You win!';
-        document.querySelector('.container').append(winText);
-        disablePlayButtons();
         appendReset();
+        document.querySelector('.container').prepend(winText);
+        disablePlayButtons();
     }
 
     if (computerScore >= 5) {
         let winText = document.createElement('h1');
         winText.textContent = 'You lose!';
-        document.querySelector('.container').append(winText);
-        disablePlayButtons();
         appendReset();
+        document.querySelector('.container').prepend(winText);
+        disablePlayButtons();
     }
 }
 
@@ -75,7 +75,8 @@ function disablePlayButtons() {
 function appendReset() {
     resetButton = document.createElement('button');
     resetButton.textContent = '↺';
-    document.querySelector('.container').append(resetButton);
+    document.querySelector('.container').prepend(resetButton);
+    resetButton.classList.add('reset');
 
     resetButton.addEventListener('click', () => {
         location.reload();

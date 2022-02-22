@@ -3,17 +3,26 @@
     <head>
         <title>🗿 🧾 ✂️</title>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <h1>🗿 🧾 ✂️</h1>
-        <button class="selection" id="1">🗿</button>
-        <button class="selection" id="2">🧾</button>
-        <button class="selection" id="3">✂️</button>
+        <div class="scoreContainer">
+            <div class="specificScore">
+                <div>Player</div>
+                <div id="playerScore" class="score">0</div>
+            </div>
 
-        <div>Player</div>
-        <div id="playerScore">0</div>
-        <div>Computer</div>
-        <div id="computerScore">0</div>
+            <div class="specificScore">
+                <div>Computer</div>
+                <div id="computerScore" class="score">0</div>
+            </div>
+        </div>
+
+        <div class="buttonContainer">
+            <button class="selection" id="1">🗿</button>
+            <button class="selection" id="2">🧾</button>
+            <button class="selection" id="3">✂️</button>
+        </div>
 
         <div class="container"></div>
 
