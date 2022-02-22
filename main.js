@@ -5,6 +5,8 @@ selection = document.querySelectorAll('.selection');
 selection.forEach((button) => {
     button.addEventListener('click', () => {
         round(parseInt(button.id) - 1, computerPlay());
+        if (playerScore == 5) {
+        }
     });
 });
 
@@ -34,6 +36,21 @@ function round(playerIndex, computerIndex) {
     let displayText = document.createElement('div');
     displayText.textContent = output;
     document.querySelector('.container').append(displayText);
+
+    if (playerScore >= 5) {
+        let winText = document.createElement('h1');
+        winText.textContent = 'You win!';
+        disablePlayButtons();
+        appendReset();
+    }
+
+    if (computerScore >= 5) {
+        let winText = document.createElement('h1');
+        winText.textContent = 'You lose!';
+        document.querySelector('.container').append(winText);
+        disablePlayButtons();
+        appendReset();
+    }
 }
 
 function lose(playerSelection, computerSelection) {
@@ -46,4 +63,20 @@ function win(playerSelection, computerSelection) {
     playerScore++;
     document.querySelector('#playerScore').textContent = playerScore;
     return `You win! ${playerSelection} beats ${computerSelection}`;
+}
+
+function disablePlayButtons() {
+    selection.forEach((button) => {
+        button.disabled = true;
+    });
+}
+
+function appendReset() {
+    resetButton = document.createElement('button');
+    resetButton.textContent = 'Reset';
+    document.querySelector('.container').append(resetButton);
+
+    resetButton.addEventListener('click', () => {
+        location.reload();
+    });
 }
