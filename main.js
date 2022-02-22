@@ -1,4 +1,4 @@
-let choices = ['Rock', 'Paper', 'Scissors'];
+let choices = ['🗿', '🧾', '✂️'];
 
 selection = document.querySelectorAll('.selection');
 
@@ -40,6 +40,7 @@ function round(playerIndex, computerIndex) {
     if (playerScore >= 5) {
         let winText = document.createElement('h1');
         winText.textContent = 'You win!';
+        document.querySelector('.container').append(winText);
         disablePlayButtons();
         appendReset();
     }
@@ -73,7 +74,7 @@ function disablePlayButtons() {
 
 function appendReset() {
     resetButton = document.createElement('button');
-    resetButton.textContent = 'Reset';
+    resetButton.textContent = '↺';
     document.querySelector('.container').append(resetButton);
 
     resetButton.addEventListener('click', () => {
